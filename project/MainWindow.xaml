@@ -1,0 +1,41 @@
+﻿<Window x:Class="VoxLauncher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VoxLauncher"
+        mc:Ignorable="d"
+        Title="Vox Launcher"
+        Height="350"
+        Width="525"
+        ResizeMode="NoResize">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.75*"/>
+            <RowDefinition Height="0.25*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.0*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <CheckBox Name="DeferredRenderingCheckbox">Deferred Rendering</CheckBox>
+            <CheckBox Name="ShadowsCheckbox">Shadows</CheckBox>
+            <CheckBox Name="BlurCheckbox">Blur</CheckBox>
+            <CheckBox Name="DynamicLightingCheckbox">Dynamic Lighting</CheckBox>
+            <CheckBox Name="SSAOCheckbox">SSAO</CheckBox>
+            <CheckBox Name="MSAACheckbox">MSAA</CheckBox>
+            <CheckBox Name="InstancedParticlesCheckbox">Instanced Particles</CheckBox>
+            <CheckBox Name="WireframeRenderingCheckbox">Wireframe Rendering</CheckBox>
+            <CheckBox Name="DebugRenderingCheckbox">Debug Rendering</CheckBox>
+            <Separator />
+
+            <CheckBox Name="VSyncCheckbox">V-Sync</CheckBox>
+            <CheckBox Name="FullscreenCheckbox">Fullscreen</CheckBox>
+        </StackPanel>
+        
+        <Button Name="LaunchButton" Grid.Column="0" Grid.Row="1" Width="100" Height="30" Content="Launch Game" Click="LauchGameClick"/>
+    </Grid>
+</Window>
