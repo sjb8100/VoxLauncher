@@ -4,3 +4,6 @@
 * Launch the Vox exe from the launcher.
 * Load the settings.ini file into the launcher.
 * Save out the settings.ini file when we save the settings or launch.
+* Add image and header.
+* Add news, pulled from online host.
+* Add patcher.
