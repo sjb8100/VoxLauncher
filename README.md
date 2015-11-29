@@ -6,6 +6,7 @@ A launcher application to config and run the Vox game executable.
 * Ability to launch Vox game.
 * Adjust graphical and rendering options before launching game.
 * Save and load settings files.
+* News and information relating to Vox, pulled from online source.
 * Auto-patching for Vox.
 
 ## License
