@@ -9,6 +9,12 @@ A launcher application to config and run the Vox game executable.
 * News and information relating to Vox, pulled from online source.
 * Auto-patching for Vox.
 
+## Setup
+// TODO //
+
+## Running
+// TODO //
+
 ## License
 This software is provided under the **GNU General Public License**, more information is provided in the [license file](https://github.com/AlwaysGeeky/VoxLauncher/blob/master/LICENSE.md).
 
