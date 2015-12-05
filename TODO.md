@@ -7,3 +7,4 @@
 * Add image and header.
 * Add news, pulled from online host.
 * Add patcher.
+* Multi-platform?
