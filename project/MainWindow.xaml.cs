@@ -23,6 +23,15 @@ namespace VoxLauncher
         public MainWindow()
         {
             InitializeComponent();
+
+            SetDefaultSettings();
+
+            LoadSettings();
+        }
+
+        public void SetDefaultSettings()
+        {
+
         }
 
         public void LoadSettings()
