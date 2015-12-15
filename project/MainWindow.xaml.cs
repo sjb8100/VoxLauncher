@@ -24,9 +24,13 @@ namespace VoxLauncher
     /// </summary>
     public partial class MainWindow : Window
     {
+        Settings m_settings = new Settings();
+
         public MainWindow()
         {
             InitializeComponent();
+
+            this.DataContext = m_settings;
 
             SetDefaultSettings();
 
@@ -43,20 +47,20 @@ namespace VoxLauncher
             // Load in from settings.ini
             IniReader iniFile = new IniReader(System.IO.Path.GetFullPath("media//config//settings.ini"));
 
-            int windowWidth = iniFile.ReadInteger("Graphics", "WindowWidth");
-            int windowHeight = iniFile.ReadInteger("Graphics", "WindowHeight");
-            bool vSync = iniFile.ReadBoolean("Graphics", "VSync");
-            bool fullScreen = iniFile.ReadBoolean("Graphics", "FullScreen");
-            bool deferredRendering = iniFile.ReadBoolean("Graphics", "DeferredRendering");
-            bool shadow = iniFile.ReadBoolean("Graphics", "Shadow");
-            bool blur = iniFile.ReadBoolean("Graphics", "Blur");
-            bool ssao = iniFile.ReadBoolean("Graphics", "SSAO");
-            bool dynamicLighting = iniFile.ReadBoolean("Graphics", "DynamicLighting");
-            bool msaa = iniFile.ReadBoolean("Graphics", "MSAA");
-            bool instancedParticles = iniFile.ReadBoolean("Graphics", "InstancedParticles");
-            bool wireframeRendering = iniFile.ReadBoolean("Graphics", "WireframeRendering");
-            bool DebugRendering = iniFile.ReadBoolean("Graphics", "DebugRendering");
-            bool faceMerging = iniFile.ReadBoolean("Graphics", "FaceMerging");
+            m_settings.WindowWidth = iniFile.ReadInteger("Graphics", "WindowWidth");
+            m_settings.WindowHeight = iniFile.ReadInteger("Graphics", "WindowHeight");
+            m_settings.VSync = iniFile.ReadBoolean("Graphics", "VSync");
+            m_settings.FullScreen = iniFile.ReadBoolean("Graphics", "FullScreen");
+            m_settings.DeferredRendering = iniFile.ReadBoolean("Graphics", "DeferredRendering");
+            m_settings.Shadows = iniFile.ReadBoolean("Graphics", "Shadows");
+            m_settings.Blur = iniFile.ReadBoolean("Graphics", "Blur");
+            m_settings.SSAO = iniFile.ReadBoolean("Graphics", "SSAO");
+            m_settings.DynamicLighting = iniFile.ReadBoolean("Graphics", "DynamicLighting");
+            m_settings.MSAA = iniFile.ReadBoolean("Graphics", "MSAA");
+            m_settings.InstancedParticles = iniFile.ReadBoolean("Graphics", "InstancedParticles");
+            m_settings.WireframeRendering = iniFile.ReadBoolean("Graphics", "WireframeRendering");
+            m_settings.DebugRendering = iniFile.ReadBoolean("Graphics", "DebugRendering");
+            m_settings.FaceMerging = iniFile.ReadBoolean("Graphics", "FaceMerging");
         }
 
         public void SaveSettings()
@@ -64,20 +68,20 @@ namespace VoxLauncher
             // Write out to settings.ini file
             IniReader iniFile = new IniReader(System.IO.Path.GetFullPath("media//config//settings.ini"));
 
-            iniFile.Write("Graphics", "WindowWidth", 1150);
-            iniFile.Write("Graphics", "WindowHeight", 900);
-            iniFile.Write("Graphics", "VSync", false);
-            iniFile.Write("Graphics", "FullScreen", false);
-            iniFile.Write("Graphics", "DeferredRendering", true);
-            iniFile.Write("Graphics", "Shadows", true);
-            iniFile.Write("Graphics", "Blur", false);
-            iniFile.Write("Graphics", "SSAO", true);
-            iniFile.Write("Graphics", "DynamicLighting", true);
-            iniFile.Write("Graphics", "MSAA", true);
-            iniFile.Write("Graphics", "InstancedParticles", true);
-            iniFile.Write("Graphics", "WireframeRendering", false);
-            iniFile.Write("Graphics", "DebugRendering", false);
-            iniFile.Write("Graphics", "FaceMerging", true);
+            iniFile.Write("Graphics", "WindowWidth", m_settings.WindowWidth);
+            iniFile.Write("Graphics", "WindowHeight", m_settings.WindowHeight);
+            iniFile.Write("Graphics", "VSync", m_settings.VSync);
+            iniFile.Write("Graphics", "FullScreen", m_settings.FullScreen);
+            iniFile.Write("Graphics", "DeferredRendering", m_settings.DeferredRendering);
+            iniFile.Write("Graphics", "Shadows", m_settings.Shadows);
+            iniFile.Write("Graphics", "Blur", m_settings.Blur);
+            iniFile.Write("Graphics", "SSAO", m_settings.SSAO);
+            iniFile.Write("Graphics", "DynamicLighting", m_settings.DynamicLighting);
+            iniFile.Write("Graphics", "MSAA", m_settings.MSAA);
+            iniFile.Write("Graphics", "InstancedParticles", m_settings.InstancedParticles);
+            iniFile.Write("Graphics", "WireframeRendering", m_settings.WireframeRendering);
+            iniFile.Write("Graphics", "DebugRendering", m_settings.DebugRendering);
+            iniFile.Write("Graphics", "FaceMerging", m_settings.FaceMerging);
         }
 
         private void LauchGameClick(object sender, RoutedEventArgs e)
@@ -125,7 +129,7 @@ namespace VoxLauncher
                 newProcess.CancelErrorRead();
                 newProcess.Close();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
 
             }

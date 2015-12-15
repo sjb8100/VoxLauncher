@@ -21,19 +21,19 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel>
-            <CheckBox Name="DeferredRenderingCheckbox">Deferred Rendering</CheckBox>
-            <CheckBox Name="ShadowsCheckbox">Shadows</CheckBox>
-            <CheckBox Name="BlurCheckbox">Blur</CheckBox>
-            <CheckBox Name="DynamicLightingCheckbox">Dynamic Lighting</CheckBox>
-            <CheckBox Name="SSAOCheckbox">SSAO</CheckBox>
-            <CheckBox Name="MSAACheckbox">MSAA</CheckBox>
-            <CheckBox Name="InstancedParticlesCheckbox">Instanced Particles</CheckBox>
-            <CheckBox Name="WireframeRenderingCheckbox">Wireframe Rendering</CheckBox>
-            <CheckBox Name="DebugRenderingCheckbox">Debug Rendering</CheckBox>
+            <CheckBox Name="DeferredRenderingCheckbox" IsChecked="{Binding DeferredRendering}">Deferred Rendering</CheckBox>
+            <CheckBox Name="ShadowsCheckbox" IsChecked="{Binding Shadows}">Shadows</CheckBox>
+            <CheckBox Name="BlurCheckbox" IsChecked="{Binding Blur}">Blur</CheckBox>
+            <CheckBox Name="DynamicLightingCheckbox" IsChecked="{Binding DynamicLighting}">Dynamic Lighting</CheckBox>
+            <CheckBox Name="SSAOCheckbox" IsChecked="{Binding SSAO}">SSAO</CheckBox>
+            <CheckBox Name="MSAACheckbox" IsChecked="{Binding MSAA}">MSAA</CheckBox>
+            <CheckBox Name="InstancedParticlesCheckbox" IsChecked="{Binding InstancedParticles}">Instanced Particles</CheckBox>
+            <CheckBox Name="WireframeRenderingCheckbox" IsChecked="{Binding WireframeRendering}">Wireframe Rendering</CheckBox>
+            <CheckBox Name="DebugRenderingCheckbox" IsChecked="{Binding DebugRendering}">Debug Rendering</CheckBox>
             <Separator />
 
-            <CheckBox Name="VSyncCheckbox">V-Sync</CheckBox>
-            <CheckBox Name="FullscreenCheckbox">Fullscreen</CheckBox>
+            <CheckBox Name="VSyncCheckbox" IsChecked="{Binding VSync}">VSync</CheckBox>
+            <CheckBox Name="FullscreenCheckbox" IsChecked="{Binding FullScreen}">Fullscreen</CheckBox>
         </StackPanel>
         
         <Button Name="LaunchButton" Grid.Column="0" Grid.Row="1" Width="100" Height="30" Content="Launch Game" Click="LauchGameClick"/>
