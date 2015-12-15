@@ -60,6 +60,22 @@ namespace VoxLauncher
         public void SaveSettings()
         {
             // Write out to settings.ini file
+            IniReader iniFile = new IniReader(System.IO.Path.GetFullPath("settings.ini"));
+
+            iniFile.Write("Graphics", "WindowWidth", 1150);
+            iniFile.Write("Graphics", "WindowHeight", 900);
+            iniFile.Write("Graphics", "VSync", false);
+            iniFile.Write("Graphics", "FullScreen", false);
+            iniFile.Write("Graphics", "DeferredRendering", true);
+            iniFile.Write("Graphics", "Shadow", true);
+            iniFile.Write("Graphics", "Blur", false);
+            iniFile.Write("Graphics", "SSAO", true);
+            iniFile.Write("Graphics", "DynamicLighting", true);
+            iniFile.Write("Graphics", "MSAA", true);
+            iniFile.Write("Graphics", "InstancedParticles", true);
+            iniFile.Write("Graphics", "WireframeRendering", false);
+            iniFile.Write("Graphics", "DebugRendering", false);
+            iniFile.Write("Graphics", "FaceMerging", true);
         }
 
         private void LauchGameClick(object sender, RoutedEventArgs e)
