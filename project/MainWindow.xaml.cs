@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Collections;
 using System.Diagnostics;
+using System.ComponentModel;
 
 namespace VoxLauncher
 {
@@ -84,6 +85,21 @@ namespace VoxLauncher
             // First save the settings
             SaveSettings();
 
+            // Create a new background worker to launch the game
+            BackgroundWorker newBackgroundWorker = new BackgroundWorker();
+
+            object[] parameters = new object[] { };
+
+            newBackgroundWorker.DoWork += new DoWorkEventHandler(BackgroundWorker_DoWork);
+            newBackgroundWorker.WorkerReportsProgress = true;
+            newBackgroundWorker.WorkerSupportsCancellation = true;
+            newBackgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackgroundWorker_Completed);
+
+            newBackgroundWorker.RunWorkerAsync(parameters);
+        }
+
+        private void BackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
             // Launch the game executable
             try
             {
@@ -113,6 +129,10 @@ namespace VoxLauncher
             {
 
             }
+        }
+
+        private void BackgroundWorker_Completed(object sender, RunWorkerCompletedEventArgs e)
+        {
         }
     }
 }
