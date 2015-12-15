@@ -39,7 +39,7 @@ namespace VoxLauncher
         public void LoadSettings()
         {
             // Load in from settings.ini
-            IniReader iniFile = new IniReader(System.IO.Path.GetFullPath("settings.ini"));
+            IniReader iniFile = new IniReader(System.IO.Path.GetFullPath("media//config//settings.ini"));
 
             int windowWidth = iniFile.ReadInteger("Graphics", "WindowWidth");
             int windowHeight = iniFile.ReadInteger("Graphics", "WindowHeight");
@@ -60,7 +60,7 @@ namespace VoxLauncher
         public void SaveSettings()
         {
             // Write out to settings.ini file
-            IniReader iniFile = new IniReader(System.IO.Path.GetFullPath("settings.ini"));
+            IniReader iniFile = new IniReader(System.IO.Path.GetFullPath("media//config//settings.ini"));
 
             iniFile.Write("Graphics", "WindowWidth", 1150);
             iniFile.Write("Graphics", "WindowHeight", 900);
