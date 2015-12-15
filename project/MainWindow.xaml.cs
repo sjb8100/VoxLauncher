@@ -90,16 +90,25 @@ namespace VoxLauncher
             SaveSettings();
 
             // Create a new background worker to launch the game
-            BackgroundWorker newBackgroundWorker = new BackgroundWorker();
+            try
+            {
+                LaunchButton.IsEnabled = false;
 
-            object[] parameters = new object[] { };
+                BackgroundWorker newBackgroundWorker = new BackgroundWorker();
 
-            newBackgroundWorker.DoWork += new DoWorkEventHandler(BackgroundWorker_DoWork);
-            newBackgroundWorker.WorkerReportsProgress = true;
-            newBackgroundWorker.WorkerSupportsCancellation = true;
-            newBackgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackgroundWorker_Completed);
+                object[] parameters = new object[] { };
 
-            newBackgroundWorker.RunWorkerAsync(parameters);
+                newBackgroundWorker.DoWork += new DoWorkEventHandler(BackgroundWorker_DoWork);
+                newBackgroundWorker.WorkerReportsProgress = true;
+                newBackgroundWorker.WorkerSupportsCancellation = true;
+                newBackgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackgroundWorker_Completed);
+
+                newBackgroundWorker.RunWorkerAsync(parameters);
+            }
+            catch (Exception)
+            {
+                LaunchButton.IsEnabled = true;
+            }
         }
 
         private void BackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -131,12 +140,13 @@ namespace VoxLauncher
             }
             catch(Exception)
             {
-
+                LaunchButton.IsEnabled = true;
             }
         }
 
         private void BackgroundWorker_Completed(object sender, RunWorkerCompletedEventArgs e)
         {
+            LaunchButton.IsEnabled = true;
         }
     }
 }
