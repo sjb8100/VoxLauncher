@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Collections;
+using System.Diagnostics;
 
 namespace VoxLauncher
 {
@@ -67,7 +68,7 @@ namespace VoxLauncher
             iniFile.Write("Graphics", "VSync", false);
             iniFile.Write("Graphics", "FullScreen", false);
             iniFile.Write("Graphics", "DeferredRendering", true);
-            iniFile.Write("Graphics", "Shadow", true);
+            iniFile.Write("Graphics", "Shadows", true);
             iniFile.Write("Graphics", "Blur", false);
             iniFile.Write("Graphics", "SSAO", true);
             iniFile.Write("Graphics", "DynamicLighting", true);
@@ -83,7 +84,35 @@ namespace VoxLauncher
             // First save the settings
             SaveSettings();
 
-            // Luanch the game executable
+            // Launch the game executable
+            try
+            {
+                // Create process
+                Process newProcess = new Process();
+                newProcess.StartInfo.UseShellExecute = false;
+                newProcess.StartInfo.RedirectStandardOutput = true;
+                newProcess.StartInfo.RedirectStandardError = true;
+                newProcess.StartInfo.CreateNoWindow = true;
+
+                // Arguments
+                newProcess.StartInfo.FileName = "VoxGame.exe";
+                newProcess.StartInfo.WorkingDirectory = "";
+                newProcess.StartInfo.Domain = "";
+                newProcess.StartInfo.Arguments = "";
+
+                // Start the process
+                newProcess.Start();
+                newProcess.BeginOutputReadLine();
+                newProcess.BeginErrorReadLine();
+                newProcess.WaitForExit();
+                newProcess.CancelOutputRead();
+                newProcess.CancelErrorRead();
+                newProcess.Close();
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
     }
 }
