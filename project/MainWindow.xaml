@@ -34,6 +34,28 @@
 
             <CheckBox Name="VSyncCheckbox" IsChecked="{Binding VSync}">VSync</CheckBox>
             <CheckBox Name="FullscreenCheckbox" IsChecked="{Binding FullScreen}">Fullscreen</CheckBox>
+            <WrapPanel Grid.Column="3" VerticalAlignment="Top" Margin="0, 5, 0, 0">
+                <Label>Resolution:</Label>
+                <ComboBox Width="90" Height="23" Margin="0, 0, 0, 0" IsEnabled="True" Name="EnvironmentSelector">
+                    <!-- 4x3 -->
+                    <ComboBoxItem Name="_800x600">800x600</ComboBoxItem>
+                    <ComboBoxItem Name="_1024x768">1024x768</ComboBoxItem>
+                    <ComboBoxItem Name="_1152x864">1152x864</ComboBoxItem>
+                    <ComboBoxItem Name="_1280x960">1280x960</ComboBoxItem>
+                    <ComboBoxItem Name="_1600x1200">1600x1200</ComboBoxItem>
+                    <Separator/>
+                    <!-- 16x10 -->
+                    <ComboBoxItem Name="_1280x800">1280x800</ComboBoxItem>
+                    <ComboBoxItem Name="_1440x900">1440x900</ComboBoxItem>
+                    <ComboBoxItem Name="_1680x1050">1680x1050</ComboBoxItem>
+                    <ComboBoxItem Name="_1900x1200">1900x1200</ComboBoxItem>
+                    <Separator/>
+                    <!-- 16x9 -->
+                    <ComboBoxItem Name="_1280x720">1280x720</ComboBoxItem>
+                    <ComboBoxItem Name="_1600x900">1600x900</ComboBoxItem>
+                    <ComboBoxItem Name="_1920x1080">1920x1080</ComboBoxItem>
+                </ComboBox>
+            </WrapPanel>
         </StackPanel>
         
         <Button Name="LaunchButton" Grid.Column="0" Grid.Row="1" Width="100" Height="30" Content="Launch Game" Click="LauchGameClick"/>

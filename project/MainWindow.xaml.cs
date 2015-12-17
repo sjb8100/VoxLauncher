@@ -39,7 +39,20 @@ namespace VoxLauncher
 
         public void SetDefaultSettings()
         {
-
+            m_settings.WindowWidth = 1150;
+            m_settings.WindowHeight = 900;
+            m_settings.VSync = false;
+            m_settings.FullScreen = false;
+            m_settings.DeferredRendering = false;
+            m_settings.Shadows = true;
+            m_settings.Blur = false;
+            m_settings.SSAO = true;
+            m_settings.DynamicLighting = true;
+            m_settings.MSAA = true;
+            m_settings.InstancedParticles = true;
+            m_settings.WireframeRendering = false;
+            m_settings.DebugRendering = false;
+            m_settings.FaceMerging = true;
         }
 
         public void LoadSettings()
