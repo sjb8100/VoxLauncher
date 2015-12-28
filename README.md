@@ -10,10 +10,12 @@ A launcher application to config and run the Vox game executable.
 * Auto-patching for Vox.
 
 ## Setup
-// TODO //
+The launcher is written in C# and is a native .Net application.
+
+TODO : Investigate running on Linux and Mac (Mono?)
 
 ## Running
-// TODO //
+Simply run the provided VoxLauncher.exe
 
 ## License
 This software is provided under the **GNU General Public License**, more information is provided in the [license file](https://github.com/AlwaysGeeky/VoxLauncher/blob/master/LICENSE.md).
