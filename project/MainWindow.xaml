@@ -21,6 +21,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel>
+            <!-- Options and settings -->
             <CheckBox Name="DeferredRenderingCheckbox" IsChecked="{Binding DeferredRendering}">Deferred Rendering</CheckBox>
             <CheckBox Name="ShadowsCheckbox" IsChecked="{Binding Shadows}">Shadows</CheckBox>
             <CheckBox Name="BlurCheckbox" IsChecked="{Binding Blur}">Blur</CheckBox>
