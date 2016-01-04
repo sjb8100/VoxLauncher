@@ -31,8 +31,6 @@
                     <CheckBox Name="SSAOCheckbox" IsChecked="{Binding SSAO}">SSAO</CheckBox>
                     <CheckBox Name="MSAACheckbox" IsChecked="{Binding MSAA}">MSAA</CheckBox>
                     <CheckBox Name="InstancedParticlesCheckbox" IsChecked="{Binding InstancedParticles}">Instanced Particles</CheckBox>
-                    <CheckBox Name="WireframeRenderingCheckbox" IsChecked="{Binding WireframeRendering}">Wireframe Rendering</CheckBox>
-                    <CheckBox Name="DebugRenderingCheckbox" IsChecked="{Binding DebugRendering}">Debug Rendering</CheckBox>
                     <Separator />
 
                     <CheckBox Name="VSyncCheckbox" IsChecked="{Binding VSync}">VSync</CheckBox>
@@ -66,6 +64,10 @@
             </TabItem>
 
             <TabItem Header="Debug">
+                <StackPanel>
+                    <CheckBox Name="WireframeRenderingCheckbox" IsChecked="{Binding WireframeRendering}">Wireframe Rendering</CheckBox>
+                    <CheckBox Name="DebugRenderingCheckbox" IsChecked="{Binding DebugRendering}">Debug Rendering</CheckBox>
+                </StackPanel>
             </TabItem>
             
         </TabControl>
