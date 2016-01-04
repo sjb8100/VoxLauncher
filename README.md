@@ -6,7 +6,7 @@ A launcher application to config and run the Vox game executable. Vox can be run
 * Ability to launch Vox game.
 * Adjust graphical and rendering options before launching game.
 * Save and load settings files.
-* News and information relating to Vox, pulled from online source.
+* News and information relating to Vox, pulled from and online data source.
 * Auto-patching for Vox.
 
 ## Setup
@@ -15,7 +15,7 @@ The launcher is written in C# and is a native .Net application.
 TODO : Investigate running on Linux and Mac (Mono?)
 
 ## Running
-Simply run the provided VoxLauncher.exe
+Simply run the provided **VoxLauncher.exe**, this will allow you to config and run the Vox executable in the Vox working directory.
 
 ## License
 This software is provided under the **GNU General Public License**, more information is provided in the [license file](https://github.com/AlwaysGeeky/VoxLauncher/blob/master/LICENSE.md).
