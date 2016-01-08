@@ -39,6 +39,7 @@ namespace VoxLauncher
 
         public void SetDefaultSettings()
         {
+            // Some sensible default settings...
             m_settings.WindowWidth = 1150;
             m_settings.WindowHeight = 900;
             m_settings.VSync = false;
@@ -105,6 +106,7 @@ namespace VoxLauncher
             // Create a new background worker to launch the game
             try
             {
+                // Don't allow multiple instances of the Vox.exe to be run at the same time from the launcher
                 LaunchButton.IsEnabled = false;
 
                 BackgroundWorker newBackgroundWorker = new BackgroundWorker();
@@ -159,6 +161,7 @@ namespace VoxLauncher
 
         private void BackgroundWorker_Completed(object sender, RunWorkerCompletedEventArgs e)
         {
+            // Once the executable is closed, allow us to launch Vox again
             LaunchButton.IsEnabled = true;
         }
     }
