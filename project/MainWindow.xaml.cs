@@ -54,6 +54,7 @@ namespace VoxLauncher
             m_settings.WireframeRendering = false;
             m_settings.DebugRendering = false;
             m_settings.FaceMerging = true;
+            m_settings.StepUpdating = false;
         }
 
         public void LoadSettings()
@@ -72,9 +73,10 @@ namespace VoxLauncher
             m_settings.DynamicLighting = iniFile.ReadBoolean("Graphics", "DynamicLighting");
             m_settings.MSAA = iniFile.ReadBoolean("Graphics", "MSAA");
             m_settings.InstancedParticles = iniFile.ReadBoolean("Graphics", "InstancedParticles");
-            m_settings.WireframeRendering = iniFile.ReadBoolean("Graphics", "WireframeRendering");
-            m_settings.DebugRendering = iniFile.ReadBoolean("Graphics", "DebugRendering");
             m_settings.FaceMerging = iniFile.ReadBoolean("Graphics", "FaceMerging");
+            m_settings.WireframeRendering = iniFile.ReadBoolean("Debug", "WireframeRendering");
+            m_settings.DebugRendering = iniFile.ReadBoolean("Debug", "DebugRendering");
+            m_settings.StepUpdating = iniFile.ReadBoolean("Debug", "StepUpdatng");
         }
 
         public void SaveSettings()
@@ -93,9 +95,10 @@ namespace VoxLauncher
             iniFile.Write("Graphics", "DynamicLighting", m_settings.DynamicLighting);
             iniFile.Write("Graphics", "MSAA", m_settings.MSAA);
             iniFile.Write("Graphics", "InstancedParticles", m_settings.InstancedParticles);
-            iniFile.Write("Graphics", "WireframeRendering", m_settings.WireframeRendering);
-            iniFile.Write("Graphics", "DebugRendering", m_settings.DebugRendering);
             iniFile.Write("Graphics", "FaceMerging", m_settings.FaceMerging);
+            iniFile.Write("Debug", "WireframeRendering", m_settings.WireframeRendering);
+            iniFile.Write("Debug", "DebugRendering", m_settings.DebugRendering);
+            iniFile.Write("Debug", "StepUpdatng", m_settings.StepUpdating);
         }
 
         private void LauchGameClick(object sender, RoutedEventArgs e)

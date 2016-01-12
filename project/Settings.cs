@@ -229,5 +229,20 @@ namespace VoxLauncher
                 OnPropertyChanged("FaceMerging");
             }
         }
+
+        private bool _StepUpdating;
+        public bool StepUpdating
+        {
+            get
+            {
+                return _StepUpdating;
+            }
+            set
+            {
+                _StepUpdating = value;
+
+                OnPropertyChanged("StepUpdating");
+            }
+        }
     }
 }

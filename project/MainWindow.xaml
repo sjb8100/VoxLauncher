@@ -63,10 +63,11 @@
             <TabItem Header="Options">
             </TabItem>
 
-            <TabItem Header="Debug">
+            <TabItem Header="Debug" Height="22" VerticalAlignment="Bottom">
                 <StackPanel>
                     <CheckBox Name="WireframeRenderingCheckbox" IsChecked="{Binding WireframeRendering}">Wireframe Rendering</CheckBox>
                     <CheckBox Name="DebugRenderingCheckbox" IsChecked="{Binding DebugRendering}">Debug Rendering</CheckBox>
+                    <CheckBox Name="StepupdatingCheckbox" IsChecked="{Binding StepUpdating}">Step Updating</CheckBox>
                 </StackPanel>
             </TabItem>
             
