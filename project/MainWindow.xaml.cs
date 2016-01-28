@@ -23,6 +23,7 @@ namespace VoxLauncher
     {
         Settings m_settings = new Settings();
 
+        // Main entry point
         public MainWindow()
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace VoxLauncher
             LoadSettings();
         }
 
+        // Set default settings
         public void SetDefaultSettings()
         {
             // Some sensible default settings...
@@ -54,6 +56,7 @@ namespace VoxLauncher
             m_settings.StepUpdating = false;
         }
 
+        // Load settings
         public void LoadSettings()
         {
             // Load in from settings.ini
@@ -76,6 +79,7 @@ namespace VoxLauncher
             m_settings.StepUpdating = iniFile.ReadBoolean("Debug", "StepUpdatng");
         }
 
+        // Save settings
         public void SaveSettings()
         {
             // Write out to settings.ini file
@@ -98,6 +102,7 @@ namespace VoxLauncher
             iniFile.Write("Debug", "StepUpdatng", m_settings.StepUpdating);
         }
 
+        // Launch game
         private void LauchGameClick(object sender, RoutedEventArgs e)
         {
             // First save the settings
