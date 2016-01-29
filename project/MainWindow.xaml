@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:VoxLauncher"
         mc:Ignorable="d"
         Title="Vox Launcher"
-        Height="375"
+        Height="475"
         Width="525"
         ResizeMode="NoResize">
     
@@ -56,6 +56,45 @@
                             <ComboBoxItem Name="_1600x900">1600x900</ComboBoxItem>
                             <ComboBoxItem Name="_1920x1080">1920x1080</ComboBoxItem>
                         </ComboBox>
+                    </WrapPanel>
+                </StackPanel>
+            </TabItem>
+
+            <TabItem Header="Landscape">
+                <StackPanel>
+                    <WrapPanel Margin="0, 0, 0, 0">
+                        <Label FontWeight="Bold">Landscape</Label>
+                    </WrapPanel>
+                    <WrapPanel Margin="20, 0, 0, 0">
+                        <Label>Octaves:</Label>
+                        <TextBox Width="75" Name="LandscapeOctaves" Text="{Binding LandscapeOctaves}"/>
+                    </WrapPanel>
+                    <WrapPanel Margin="20, 0, 0, 0">
+                        <Label>Persistence:</Label>
+                        <TextBox Width="75" Name="LandscapePersistence" Text="{Binding LandscapePersistence}"/>
+                    </WrapPanel>
+                    <WrapPanel Margin="20, 0, 0, 0">
+                        <Label>Scale:</Label>
+                        <TextBox Width="75" Name="LandscapeScale" Text="{Binding LandscapeScale}"/>
+                    </WrapPanel>
+                    <WrapPanel Margin="0, 0, 0, 0">
+                        <Label FontWeight="Bold">Mountains</Label>
+                    </WrapPanel>
+                    <WrapPanel Margin="20, 0, 0, 0">
+                    <Label>Octaves:</Label>
+                    <TextBox Width="75" Name="MountainOctaves" Text="{Binding MountainOctaves}"/>
+                    </WrapPanel>
+                    <WrapPanel Margin="20, 0, 0, 0">
+                        <Label>Persistence:</Label>
+                        <TextBox Width="75" Name="MountainPersistence" Text="{Binding MountainPersistence}"/>
+                    </WrapPanel>
+                    <WrapPanel Margin="20, 0, 0, 0">
+                        <Label>Scale:</Label>
+                        <TextBox Width="75" Name="MountainScale" Text="{Binding MountainScale}"/>
+                    </WrapPanel>
+                    <WrapPanel Margin="20, 0, 0, 0">
+                        <Label>Multiplier:</Label>
+                        <TextBox Width="75" Name="MountainMultiplier" Text="{Binding MountainMultiplier}"/>
                     </WrapPanel>
                 </StackPanel>
             </TabItem>

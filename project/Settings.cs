@@ -20,6 +20,7 @@ namespace VoxLauncher
             }
         }
 
+        // Graphics
         private int _WindowWidth;
         public int WindowWidth
         {
@@ -185,6 +186,22 @@ namespace VoxLauncher
             }
         }
 
+        private bool _FaceMerging;
+        public bool FaceMerging
+        {
+            get
+            {
+                return _FaceMerging;
+            }
+            set
+            {
+                _FaceMerging = value;
+
+                OnPropertyChanged("FaceMerging");
+            }
+        }
+
+        // Debug
         private bool _WireframeRendering;
         public bool WireframeRendering
         {
@@ -215,21 +232,6 @@ namespace VoxLauncher
             }
         }
 
-        private bool _FaceMerging;
-        public bool FaceMerging
-        {
-            get
-            {
-                return _FaceMerging;
-            }
-            set
-            {
-                _FaceMerging = value;
-
-                OnPropertyChanged("FaceMerging");
-            }
-        }
-
         private bool _StepUpdating;
         public bool StepUpdating
         {
@@ -242,6 +244,112 @@ namespace VoxLauncher
                 _StepUpdating = value;
 
                 OnPropertyChanged("StepUpdating");
+            }
+        }
+
+        // Landscape
+        private float _LandscapeOctaves;
+        public float LandscapeOctaves
+        {
+            get
+            {
+                return _LandscapeOctaves;
+            }
+            set
+            {
+                _LandscapeOctaves = value;
+
+                OnPropertyChanged("LandscapeOctaves");
+            }
+        }
+
+        private float _LandscapePersistence;
+        public float LandscapePersistence
+        {
+            get
+            {
+                return _LandscapePersistence;
+            }
+            set
+            {
+                _LandscapePersistence = value;
+
+                OnPropertyChanged("LandscapePersistence");
+            }
+        }
+
+        private float _LandscapeScale;
+        public float LandscapeScale
+        {
+            get
+            {
+                return _LandscapeScale;
+            }
+            set
+            {
+                _LandscapeScale = value;
+
+                OnPropertyChanged("LandscapeScale");
+            }
+        }
+
+        private float _MountainOctaves;
+        public float MountainOctaves
+        {
+            get
+            {
+                return _MountainOctaves;
+            }
+            set
+            {
+                _MountainOctaves = value;
+
+                OnPropertyChanged("MountainOctaves");
+            }
+        }
+
+        private float _MountainPersistence;
+        public float MountainPersistence
+        {
+            get
+            {
+                return _MountainPersistence;
+            }
+            set
+            {
+                _MountainPersistence = value;
+
+                OnPropertyChanged("MountainPersistence");
+            }
+        }
+
+        private float _MountainScale;
+        public float MountainScale
+        {
+            get
+            {
+                return _MountainScale;
+            }
+            set
+            {
+                _MountainScale = value;
+
+                OnPropertyChanged("MountainScale");
+            }
+        }
+
+        private float _MountainMultiplier;
+        public float MountainMultiplier
+        {
+            get
+            {
+                return _MountainMultiplier;
+            }
+            set
+            {
+                _MountainMultiplier = value;
+
+                OnPropertyChanged("MountainMultiplier");
             }
         }
     }

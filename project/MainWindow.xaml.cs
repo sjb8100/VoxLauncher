@@ -51,6 +51,9 @@ namespace VoxLauncher
             m_settings.MSAA = true;
             m_settings.InstancedParticles = true;
             m_settings.WireframeRendering = false;
+
+
+
             m_settings.DebugRendering = false;
             m_settings.FaceMerging = true;
             m_settings.StepUpdating = false;
@@ -62,6 +65,7 @@ namespace VoxLauncher
             // Load in from settings.ini
             IniReader iniFile = new IniReader(System.IO.Path.GetFullPath("media//config//settings.ini"));
 
+            // Graphics
             m_settings.WindowWidth = iniFile.ReadInteger("Graphics", "WindowWidth");
             m_settings.WindowHeight = iniFile.ReadInteger("Graphics", "WindowHeight");
             m_settings.VSync = iniFile.ReadBoolean("Graphics", "VSync");
@@ -74,6 +78,31 @@ namespace VoxLauncher
             m_settings.MSAA = iniFile.ReadBoolean("Graphics", "MSAA");
             m_settings.InstancedParticles = iniFile.ReadBoolean("Graphics", "InstancedParticles");
             m_settings.FaceMerging = iniFile.ReadBoolean("Graphics", "FaceMerging");
+
+            // Landscape
+            float landscapeOctaves;
+            float.TryParse(iniFile.ReadString("Landscape", "LandscapeOctaves"), out landscapeOctaves);
+            m_settings.LandscapeOctaves = landscapeOctaves;
+            float landscapePersistence;
+            float.TryParse(iniFile.ReadString("Landscape", "LandscapePersistence"), out landscapePersistence);
+            m_settings.LandscapePersistence = landscapePersistence;
+            float landscapeScale;
+            float.TryParse(iniFile.ReadString("Landscape", "LandscapeScale"), out landscapeScale);
+            m_settings.LandscapeScale = landscapeScale;
+            float mountainOctaves;
+            float.TryParse(iniFile.ReadString("Landscape", "MountainOctaves"), out mountainOctaves);
+            m_settings.MountainOctaves = mountainOctaves;
+            float mountainPersistence;
+            float.TryParse(iniFile.ReadString("Landscape", "MountainPersistence"), out mountainPersistence);
+            m_settings.MountainPersistence = mountainPersistence;
+            float mountainScale;
+            float.TryParse(iniFile.ReadString("Landscape", "MountainScale"), out mountainScale);
+            m_settings.MountainScale = mountainScale;
+            float mountainMultiplier;
+            float.TryParse(iniFile.ReadString("Landscape", "MountainMultiplier"), out mountainMultiplier);
+            m_settings.MountainMultiplier = mountainMultiplier;
+
+            // Debug
             m_settings.WireframeRendering = iniFile.ReadBoolean("Debug", "WireframeRendering");
             m_settings.DebugRendering = iniFile.ReadBoolean("Debug", "DebugRendering");
             m_settings.StepUpdating = iniFile.ReadBoolean("Debug", "StepUpdatng");
@@ -85,6 +114,7 @@ namespace VoxLauncher
             // Write out to settings.ini file
             IniReader iniFile = new IniReader(System.IO.Path.GetFullPath("media//config//settings.ini"));
 
+            // Graphics
             iniFile.Write("Graphics", "WindowWidth", m_settings.WindowWidth);
             iniFile.Write("Graphics", "WindowHeight", m_settings.WindowHeight);
             iniFile.Write("Graphics", "VSync", m_settings.VSync);
@@ -97,6 +127,17 @@ namespace VoxLauncher
             iniFile.Write("Graphics", "MSAA", m_settings.MSAA);
             iniFile.Write("Graphics", "InstancedParticles", m_settings.InstancedParticles);
             iniFile.Write("Graphics", "FaceMerging", m_settings.FaceMerging);
+
+            // Landscape
+            iniFile.Write("Landscape", "LandscapeOctaves", m_settings.LandscapeOctaves.ToString());
+            iniFile.Write("Landscape", "LandscapePersistence", m_settings.LandscapePersistence.ToString());
+            iniFile.Write("Landscape", "LandscapeScale", m_settings.LandscapeScale.ToString());
+            iniFile.Write("Landscape", "MountainOctaves", m_settings.MountainOctaves.ToString());
+            iniFile.Write("Landscape", "MountainPersistence", m_settings.MountainPersistence.ToString());
+            iniFile.Write("Landscape", "MountainScale", m_settings.MountainScale.ToString());
+            iniFile.Write("Landscape", "MountainMultiplier", m_settings.MountainMultiplier.ToString());
+
+            // Debug
             iniFile.Write("Debug", "WireframeRendering", m_settings.WireframeRendering);
             iniFile.Write("Debug", "DebugRendering", m_settings.DebugRendering);
             iniFile.Write("Debug", "StepUpdatng", m_settings.StepUpdating);
