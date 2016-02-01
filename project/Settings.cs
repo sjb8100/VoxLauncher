@@ -262,6 +262,21 @@ namespace VoxLauncher
             }
         }
 
+        private String _GameMode;
+        public String GameMode
+        {
+            get
+            {
+                return _GameMode;
+            }
+            set
+            {
+                _GameMode = value;
+
+                OnPropertyChanged("GameMode");
+            }
+        }
+
         // Landscape
         private float _LandscapeOctaves;
         public float LandscapeOctaves

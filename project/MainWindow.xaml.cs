@@ -109,6 +109,8 @@ namespace VoxLauncher
             m_settings.DebugRendering = iniFile.ReadBoolean("Debug", "DebugRendering");
             m_settings.StepUpdating = iniFile.ReadBoolean("Debug", "StepUpdatng");
             m_settings.ShowDebugGUI = iniFile.ReadBoolean("Debug", "ShowDebugGUI");
+            m_settings.GameMode = iniFile.ReadString("Debug", "GameMode");
+            SetGameModeGUI();
         }
 
         // Save settings
@@ -145,6 +147,40 @@ namespace VoxLauncher
             iniFile.Write("Debug", "DebugRendering", m_settings.DebugRendering);
             iniFile.Write("Debug", "StepUpdatng", m_settings.StepUpdating);
             iniFile.Write("Debug", "ShowDebugGUI", m_settings.ShowDebugGUI);
+            SetGameModeSettings();
+            iniFile.Write("Debug", "GameMode", m_settings.GameMode);
+        }
+
+        private void SetGameModeGUI()
+        {
+            if(m_settings.GameMode == "Game")
+            {
+                GameMode.IsChecked = true;
+            }
+            else if (m_settings.GameMode == "FrontEnd")
+            {
+                FrontEndMode.IsChecked = true;
+            }
+            else if (m_settings.GameMode == "Debug")
+            {
+                DebugMode.IsChecked = true;
+            }
+        }
+
+        private void SetGameModeSettings()
+        {
+            if(GameMode.IsChecked.Value == true)
+            {
+                m_settings.GameMode = "Game";
+            }
+            else if (FrontEndMode.IsChecked.Value == true)
+            {
+                m_settings.GameMode = "FrontEnd";
+            }
+            else if (DebugMode.IsChecked.Value == true)
+            {
+                m_settings.GameMode = "Debug";
+            }
         }
 
         // Launch game

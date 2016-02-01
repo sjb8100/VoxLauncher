@@ -57,6 +57,7 @@
                             <ComboBoxItem Name="_1920x1080">1920x1080</ComboBoxItem>
                         </ComboBox>
                     </WrapPanel>
+                    <Separator />
                 </StackPanel>
             </TabItem>
 
@@ -108,6 +109,12 @@
                     <CheckBox Name="DebugRenderingCheckbox" IsChecked="{Binding DebugRendering}">Debug Rendering</CheckBox>
                     <CheckBox Name="StepupdatingCheckbox" IsChecked="{Binding StepUpdating}">Step Updating</CheckBox>
                     <CheckBox Name="ShowDebugGUICheckbox" IsChecked="{Binding ShowDebugGUI}">Show Debug GUI</CheckBox>
+                    <Separator />
+                    
+                    <RadioButton GroupName="Mode" Name="GameMode" IsChecked="True">Game</RadioButton>
+                    <RadioButton GroupName="Mode" Name="FrontEndMode">FrontEnd</RadioButton>
+                    <RadioButton GroupName="Mode" Name="DebugMode">Debug</RadioButton>
+                    <Separator />
                 </StackPanel>
             </TabItem>
             
