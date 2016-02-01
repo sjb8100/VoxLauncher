@@ -107,6 +107,7 @@
                     <CheckBox Name="WireframeRenderingCheckbox" IsChecked="{Binding WireframeRendering}">Wireframe Rendering</CheckBox>
                     <CheckBox Name="DebugRenderingCheckbox" IsChecked="{Binding DebugRendering}">Debug Rendering</CheckBox>
                     <CheckBox Name="StepupdatingCheckbox" IsChecked="{Binding StepUpdating}">Step Updating</CheckBox>
+                    <CheckBox Name="ShowDebugGUICheckbox" IsChecked="{Binding ShowDebugGUI}">Show Debug GUI</CheckBox>
                 </StackPanel>
             </TabItem>
             

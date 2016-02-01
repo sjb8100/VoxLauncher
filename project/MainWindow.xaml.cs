@@ -52,11 +52,13 @@ namespace VoxLauncher
             m_settings.InstancedParticles = true;
             m_settings.WireframeRendering = false;
 
+            // Landscape
 
-
+            // Debug
             m_settings.DebugRendering = false;
             m_settings.FaceMerging = true;
             m_settings.StepUpdating = false;
+            m_settings.ShowDebugGUI = true;
         }
 
         // Load settings
@@ -106,6 +108,7 @@ namespace VoxLauncher
             m_settings.WireframeRendering = iniFile.ReadBoolean("Debug", "WireframeRendering");
             m_settings.DebugRendering = iniFile.ReadBoolean("Debug", "DebugRendering");
             m_settings.StepUpdating = iniFile.ReadBoolean("Debug", "StepUpdatng");
+            m_settings.ShowDebugGUI = iniFile.ReadBoolean("Debug", "ShowDebugGUI");
         }
 
         // Save settings
@@ -141,6 +144,7 @@ namespace VoxLauncher
             iniFile.Write("Debug", "WireframeRendering", m_settings.WireframeRendering);
             iniFile.Write("Debug", "DebugRendering", m_settings.DebugRendering);
             iniFile.Write("Debug", "StepUpdatng", m_settings.StepUpdating);
+            iniFile.Write("Debug", "ShowDebugGUI", m_settings.ShowDebugGUI);
         }
 
         // Launch game

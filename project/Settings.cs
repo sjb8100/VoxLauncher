@@ -247,6 +247,21 @@ namespace VoxLauncher
             }
         }
 
+        private bool _ShowDebugGUI;
+        public bool ShowDebugGUI
+        {
+            get
+            {
+                return _ShowDebugGUI;
+            }
+            set
+            {
+                _ShowDebugGUI = value;
+
+                OnPropertyChanged("ShowDebugGUI");
+            }
+        }
+
         // Landscape
         private float _LandscapeOctaves;
         public float LandscapeOctaves
