@@ -183,6 +183,12 @@ namespace VoxLauncher
             }
         }
 
+        // Save settings
+        private void SaveSettingsClick(object sender, RoutedEventArgs e)
+        {
+            SaveSettings();
+        }
+
         // Launch game
         private void LauchGameClick(object sender, RoutedEventArgs e)
         {

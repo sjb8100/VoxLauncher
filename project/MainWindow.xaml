@@ -119,7 +119,10 @@
             </TabItem>
             
         </TabControl>
-        
-        <Button Name="LaunchButton" Grid.Column="0" Grid.Row="1" Width="100" Height="30" Content="Launch Game" Click="LauchGameClick"/>
+
+        <WrapPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center">
+            <Button Name="LaunchButton" Margin="10, 10, 10, 10" Width="100" Height="30" Content="Launch Game" Click="LauchGameClick"/>
+            <Button Name="SaveButton" Margin="10, 10, 10, 10" Width="100" Height="30" Content="Save Settings" Click="SaveSettingsClick"/>
+        </WrapPanel>
     </Grid>
 </Window>
