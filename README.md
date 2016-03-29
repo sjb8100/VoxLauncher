@@ -27,4 +27,4 @@ Contributions are always welcome, either reporting issues/bugs or forking the re
 You can contact me via twitter at http://www.twitter.com/AlwaysGeeky. I am always happy to answer questions or help with any issues you might have, and please be sure to share any additional work or your creations with me, I love seeing what other people are making.
 
 #Screenshots
-// TODO //
+*Coming soon*.
