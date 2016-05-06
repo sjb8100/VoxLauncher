@@ -16,7 +16,7 @@ A launcher application to config and run the Vox game executable. Vox can be run
 The launcher is written in C# and is a native .Net application.
 
 ##Running
-Simply run the provided **VoxLauncher.exe**, this will allow you to config and run the Vox executable in the Vox working directory. Configuration files and uutput settings are written to the 'Vox' game directory under ''/media/config/''.
+Simply run the provided **VoxLauncher.exe**, this will allow you to config and run the Vox executable in the Vox working directory. Configuration files and uutput settings are written to the 'Vox' game directory under */media/config/*.
 
 ##License
 This software is provided under the **GNU General Public License**, more information is provided in the [license file](https://github.com/AlwaysGeeky/VoxLauncher/blob/master/LICENSE.md).
