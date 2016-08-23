@@ -11,5 +11,5 @@
 - [ ] Add Vox style and images.
 - [ ] Add news, pulled from online host.
 - [ ] Add patcher.
-- [ ] Multi-platform (mono)?
+- [ ] Multi-platform (mono, linux, mac)?
 - [ ] Add login username/password forms
