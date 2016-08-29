@@ -12,4 +12,6 @@
 - [ ] Add news, pulled from online host.
 - [ ] Add patcher.
 - [ ] Multi-platform (mono, linux, mac)?
-- [ ] Add login username/password forms
+- [ ] Add login username/password forms.
+- [ ] Help.
+- [ ] Credits.
