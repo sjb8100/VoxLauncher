@@ -1,4 +1,5 @@
 <img src="readme_icon.png" align="right" />
+
 #Vox Launcher
 
 A launcher application to config and run the Vox game executable. Vox can be run separately from the luancher and will function fine without it, but the launcher will auto-update and also allow settings and options to be set outside of running the game.
